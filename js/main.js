@@ -20,6 +20,8 @@ $( document ).ready(function() {
         showSetup();
     });
     var total = 0;
+    $('[data-toggle="tooltip"]').tooltip();
+
     $( ".file-form" ).each(function() {
             $( this ).validate({
                 rules: {
@@ -67,10 +69,11 @@ $( document ).ready(function() {
         i = -1,
         perc = 0,
             sendData = function (data) {
-                preloader.Show();
+                //preloader.Show();
                 i++;
                 var DATA = JSON.parse(data);
                 if (DATA.Type == 'Error') {
+                    preloader.Hide();
                     $('.result').removeClass().addClass("result text-danger");
                     $('.result').html(DATA.Mess);
                 } else if(DATA.Type == 'Ok') {

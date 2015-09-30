@@ -49,7 +49,7 @@ $checker = new \Parser\Checker();
                                         <div class="form-group">
                                             <label for="algo">Алгоритм оценки:</label>
                                             <?foreach ($checker->getAlgo() as $name => $obj):?>
-                                                <label class="radio-inline"><input type="radio" id="algo" name="algo" value="<?=$name?>"><?=$name?></label>
+                                                <label class="radio-inline"><input type="radio" id="algo" name="algo" checked="checked" value="<?=$name?>"><?=$name?></label>
                                             <?endforeach;?>
                                         </div>
                                         <div class="form-group">
@@ -59,10 +59,11 @@ $checker = new \Parser\Checker();
                                             <?endforeach;?>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="old_url" name="old_url" placeholder="Старый домен (без www)" value="">
+                                            <input type="text" data-toggle="tooltip" data-placement="bottom" title="Допустимые форматы ввода: domain.com, www.domain.com, http://domain.com, https://www.domain.com" class="form-control" id="old_url" name="old_url" placeholder="Старый домен" value="">
+                                            <p class="text-success">Старый домен указывается лишь для того, чтобы отсечь все снешние ссылки. В запрос идут ссылки из выгрузки</p>
                                         </div>
                                         <div class="form-group">
-                                                 <input type="text" class="form-control" id="new_url" name="new_url" placeholder="Новый домен" value="">
+                                            <input type="text" data-toggle="tooltip" data-placement="bottom" title="Допустимые форматы ввода: domain.com, www.domain.com, http://domain.com, https://www.domain.com" class="form-control" id="new_url" name="new_url" placeholder="Новый домен" value="">
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="threads" name="threads" placeholder="Количество потоков (по умолчанию 10)" value="">
