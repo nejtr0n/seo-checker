@@ -28,9 +28,21 @@ $checker = new \Parser\Checker();
                         <div class="panel panel-default setup1">
                             <div class="panel-body">
                                 <h2>Данные</h2>
-                                    <p>
-                                        <img src="img/csv.png" />
-                                    </p>
+                                <div class="row">
+                                    <div class="col-sm-6">
+                                        <p>
+                                            <img src="img/csv.png" />
+                                        </p>
+                                    </div>
+                                    <div class="col-sm-6">
+                                        <p class="lead">
+                                            Утилита предназначена для сравнения страниц сайтов после переноса на новый хостинг.
+                                        </p>
+                                        <p class="lead">
+                                            Доступны проверки тегов title, h1. Также проводится поиск страниц, закрытых для индексации в robots.txt.
+                                        </p>
+                                    </div>
+                                </div>
                                 <form class="file-form ajax-form" method="POST" action="ajax_csvfile.php">
                                     <div class="form-group">
                                         <label for="csvfile">Фаил с проверяемыми страницами (csv)</label>
