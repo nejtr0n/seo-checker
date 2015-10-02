@@ -1,6 +1,9 @@
 #wrapper {
     margin-top: 15px;
-    font-size: 20px;
+    font-size: 16px;
+}
+#wrapper ul {
+    list-style: decimal;
 }
 #csvfile-error {
     color: red;
