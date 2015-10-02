@@ -69,7 +69,7 @@ $( document ).ready(function() {
         i = -1,
         perc = 0,
             sendData = function (data) {
-                //preloader.Show();
+                preloader.Show();
                 i++;
                 var DATA = JSON.parse(data);
                 if (DATA.Type == 'Error') {

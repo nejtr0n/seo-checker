@@ -60,7 +60,7 @@ $checker = new \Parser\Checker();
                                         </div>
                                         <div class="form-group">
                                             <input type="text" data-toggle="tooltip" data-placement="bottom" title="Допустимые форматы ввода: domain.com, www.domain.com, http://domain.com, https://www.domain.com" class="form-control" id="old_url" name="old_url" placeholder="Старый домен" value="">
-                                            <p class="text-success">Старый домен указывается лишь для того, чтобы отсечь все снешние ссылки. В запрос идут ссылки из выгрузки</p>
+                                            <p class="text-success">Старый домен указывается лишь для того, чтобы отсечь все внешние ссылки. В запрос идут ссылки из выгрузки</p>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" data-toggle="tooltip" data-placement="bottom" title="Допустимые форматы ввода: domain.com, www.domain.com, http://domain.com, https://www.domain.com" class="form-control" id="new_url" name="new_url" placeholder="Новый домен" value="">

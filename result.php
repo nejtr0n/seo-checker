@@ -54,6 +54,27 @@ if (isset($_GET['download'])) {
     <div class="container">
         <div class="row">
             <div class="col-md-12">
+                <h2>Robots.txt</h2>
+                    <?
+                    if ($data[0]['old_url']) {
+                        $old = parse_url($data[0]['old_url']);
+                        $old_host = 'http://'.$old['host'];
+                        $old_robots = new \Parser\Xbb_RobotsTxt($old_host);
+                    ?>
+                        <div>
+                            <p><?=$old_host?> - <?echo ($old_robots->allow('/')) ? '<span class="text-success">Allow</span>' : '<span class="text-danger">Disallow</span>';?></p>
+                        </div>
+                    <?}?>
+                    <?
+                    if ($data[0]['new_url']) {
+                        $new = parse_url($data[0]['new_url']);
+                        $new_host = 'http://'.$new['host'];
+                        $new_robots = new \Parser\Xbb_RobotsTxt($new_host);
+                        ?>
+                        <div>
+                            <p><?=$new_host?> - <?echo ($new_robots->allow('/')) ? '<span class="text-success">Allow</span>' : '<span class="text-danger">Disallow</span>';?></p>
+                        </div>
+                    <?}?>
                 <h2>Результат</h2>
                     <table class="table table-bordered">
                         <thead>
