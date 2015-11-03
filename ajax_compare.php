@@ -20,7 +20,7 @@ if (!empty($_POST['algo']) && array_key_exists($_POST['algo'], $checker->getAlgo
                     $threads = empty($_POST['threads']) ? 10 : intval($_POST['threads']);
                     $return = array (
                         'Type' => 'Ok',
-                        'Data' => json_encode($checker->run((string)$_POST['algo'], $filters, $threads))
+                        'Data' => json_encode($checker->run((string)$_POST['algo'], $filters, $threads, $_POST["old_encoding"], $_POST["new_encoding"]))
                     );
                 } else {
                     $return = array (

@@ -84,12 +84,24 @@ $checker = new \Parser\Checker();
                                                 <label class="checkbox-inline"><input name='filters[]' type="checkbox" value="<?=$name?>"><?=$name?></label>
                                             <?endforeach;?>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" data-toggle="tooltip" data-placement="bottom" title="Допустимые форматы ввода: domain.com, www.domain.com, http://domain.com, https://www.domain.com" class="form-control" id="old_url" name="old_url" placeholder="Старый домен" value="">
+                                        <div class="form-inline">
+                                            <div class="form-group domain-group">
+                                                <input type="text" data-toggle="tooltip" data-placement="bottom" title="Допустимые форматы ввода: domain.com, www.domain.com, http://domain.com, https://www.domain.com" class="form-control input-domain" id="old_url" name="old_url" placeholder="Старый домен" value="">
+                                                <select class="form-control" name="old_encoding">
+                                                    <option value="UTF-8">UTF-8</option>
+                                                    <option value="windows-1251">windows-1251</option>
+                                                </select>
+                                            </div>
                                             <p class="text-success">Старый домен указывается лишь для того, чтобы отсечь все внешние ссылки. В запрос идут ссылки из выгрузки</p>
                                         </div>
-                                        <div class="form-group">
-                                            <input type="text" data-toggle="tooltip" data-placement="bottom" title="Допустимые форматы ввода: domain.com, www.domain.com, http://domain.com, https://www.domain.com" class="form-control" id="new_url" name="new_url" placeholder="Новый домен" value="">
+                                        <div class="form-inline">
+                                            <div class="form-group domain-group">
+                                                <input type="text" data-toggle="tooltip" data-placement="bottom" title="Допустимые форматы ввода: domain.com, www.domain.com, http://domain.com, https://www.domain.com" class="form-control input-domain" id="new_url" name="new_url" placeholder="Новый домен" value="">
+                                                <select class="form-control" name="new_encoding">
+                                                    <option>UTF-8</option>
+                                                    <option>windows-1251</option>
+                                                </select>
+                                            </div>
                                         </div>
                                         <div class="form-group">
                                             <input type="text" class="form-control" id="threads" name="threads" placeholder="Количество потоков (по умолчанию 10)" value="">

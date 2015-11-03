@@ -60,3 +60,12 @@
 .no-js #status {
     display: none;
 }
+.domain-group {
+    display: flex !important;
+    flex-flow: row wrap;
+    justify-content: flex-end;
+    margin-bottom: 15px !important;
+}
+.input-domain {
+    flex-grow: 2;
+}
