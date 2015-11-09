@@ -104,7 +104,7 @@ $checker = new \Parser\Checker();
                                             </div>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" id="threads" name="threads" placeholder="Количество потоков (по умолчанию 10)" value="">
+                                            <input type="text" class="form-control" id="threads" name="threads" placeholder="Количество потоков (по умолчанию 10)" value="10">
                                         </div>
                                         <button type="submit" class="btn btn-success btn-large">Сравнить</button>
                                         <a href="index.php" role="button" class="btn btn-default btn-large">Начало</a>

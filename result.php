@@ -86,6 +86,11 @@ if (isset($_GET['download'])) {
                         </thead>
                         <tbody>
                             <?foreach ($data as $line):?>
+                                <?
+                                    if ($line["skip"] == 1) {
+                                        continue;
+                                    }
+                                ?>
                                 <tr>
                                     <?foreach ($header as $column):?>
                                         <td><?=$line[$column["name"]]?></td>
