@@ -106,4 +106,20 @@ $( document ).ready(function() {
     });
     // Bootstrap button style
     $('.file-input').bootstrapFileInput();
+
+    // Color data
+    $('.Robots_old_marker, .Robots_new_marker').each(function(index, value) {
+        if ($(this).text() == 1) {
+            $(this).html('<p class="text-success">Allow</p>');
+        } else {
+            $(this).html('<p class="text-danger">Disallow</p>');
+        }
+    });
+    $('.Status_old_marker, .Status_new_marker').each(function(index, value) {
+        if ($.inArray($(this).text(), ["200"] ) > -1) {
+            $(this).html('<p class="text-success">'+$(this).text()+'</p>');
+        } else if ($.inArray($(this).text(), ["404"] ) > -1) {
+            $(this).html('<p class="text-danger">'+$(this).text()+'</p>');
+        }
+    });
 });

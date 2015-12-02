@@ -59,7 +59,7 @@ if (isset($_GET['download'])) {
                     if ($data[0]['old_url']) {
                         $old = parse_url($data[0]['old_url']);
                         $old_host = 'http://'.$old['host'];
-                        $old_robots = new \Parser\Xbb_RobotsTxt($old_host);
+                        $old_robots = \Parser\Xbb_RobotsTxt::getInstance($old_host);
                     ?>
                         <div>
                             <p><?=$old_host?> - <?echo ($old_robots->allow('/')) ? '<span class="text-success">Allow</span>' : '<span class="text-danger">Disallow</span>';?></p>
@@ -69,7 +69,7 @@ if (isset($_GET['download'])) {
                     if ($data[0]['new_url']) {
                         $new = parse_url($data[0]['new_url']);
                         $new_host = 'http://'.$new['host'];
-                        $new_robots = new \Parser\Xbb_RobotsTxt($new_host);
+                        $new_robots = \Parser\Xbb_RobotsTxt::getInstance($new_host);
                         ?>
                         <div>
                             <p><?=$new_host?> - <?echo ($new_robots->allow('/')) ? '<span class="text-success">Allow</span>' : '<span class="text-danger">Disallow</span>';?></p>
@@ -93,7 +93,7 @@ if (isset($_GET['download'])) {
                                 ?>
                                 <tr>
                                     <?foreach ($header as $column):?>
-                                        <td><?=$line[$column["name"]]?></td>
+                                        <td class="<?=$column["name"].'_marker'?>"><?=$line[$column["name"]]?></td>
                                     <?endforeach;?>
                                 </tr>
                             <?endforeach;?>

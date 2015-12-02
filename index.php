@@ -73,12 +73,6 @@ $checker = new \Parser\Checker();
                                 <h2>Настройка</h2>
                                     <form class="compare-form ajax-form" method="POST" action="ajax_compare.php">
                                         <div class="form-group">
-                                            <label for="algo">Алгоритм оценки:</label>
-                                            <?foreach ($checker->getAlgo() as $name => $obj):?>
-                                                <label class="radio-inline"><input type="radio" id="algo" name="algo" checked="checked" value="<?=$name?>"><?=$name?></label>
-                                            <?endforeach;?>
-                                        </div>
-                                        <div class="form-group">
                                             <label for="filters">Фильтры:</label>
                                             <?foreach ($checker->getFilters() as $name => $obj):?>
                                                 <label class="checkbox-inline"><input name='filters[]' type="checkbox" value="<?=$name?>"><?=$name?></label>

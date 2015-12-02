@@ -11,7 +11,6 @@ $return = array (
     'Type' => 'Error',
     'Mess' => 'Неизвестная ошибка'
 );
-if (!empty($_POST['algo']) && array_key_exists($_POST['algo'], $checker->getAlgo())) {
     if (!empty($_POST['filters']) && is_array($_POST['filters'])) {
         $filters = array_intersect(array_keys($checker->getFilters()), $_POST['filters']);
         if (!empty($filters)) {
@@ -20,7 +19,7 @@ if (!empty($_POST['algo']) && array_key_exists($_POST['algo'], $checker->getAlgo
                     $threads = empty($_POST['threads']) ? 10 : intval($_POST['threads']);
                     $return = array (
                         'Type' => 'Ok',
-                        'Data' => json_encode($checker->run((string)$_POST['algo'], $filters, $threads, $_POST["old_encoding"], $_POST["new_encoding"]))
+                        'Data' => json_encode($checker->run($filters, $threads, $_POST["old_encoding"], $_POST["new_encoding"]))
                     );
                 } else {
                     $return = array (
@@ -46,10 +45,4 @@ if (!empty($_POST['algo']) && array_key_exists($_POST['algo'], $checker->getAlgo
             'Mess' => 'Не выбран не один фильтр'
         );
     }
-} else {
-    $return = array (
-        'Type' => 'Error',
-        'Mess' => 'Неверный алгоритм'
-    );
-}
 echo json_encode($return);
